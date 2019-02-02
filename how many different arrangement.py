@@ -25,12 +25,11 @@ def dp_check(n, mem={}):
         return mem[n]
     if n < 0:
         return 0
-    if n == 0 or n == 0:
+    if n == 0:
         return 1
     else:
-        count = dp_check(n-1) + dp_check(n-2)
-        mem[n] = count
-        return count
+        mem[n] = dp_check(n-1) + dp_check(n-2)
+        return mem[n]
 
 
 
